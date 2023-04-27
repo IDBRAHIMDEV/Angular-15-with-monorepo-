@@ -4,13 +4,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { HomeComponent } from './home/home.component';
+import { CardModule } from '@medcoding/card';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, HomeComponent],
+  declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
