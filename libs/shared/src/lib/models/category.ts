@@ -4,3 +4,13 @@ export interface Category {
     color?: string;
     icon?: string; 
 }
+
+export interface ResCategory {
+    success?: boolean;
+    categories: Category[]
+}
+
+export interface ResOneCategory {
+    success?: boolean;
+    category: Category;
+}
