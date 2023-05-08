@@ -1,3 +1,4 @@
+import { AuthGuard } from '@medcoding/users';
 import { Route } from '@angular/router';
 
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
@@ -6,17 +7,17 @@ import { ListCategoryComponent } from './pages/list-category/list-category.compo
 import { EditCategoryComponent } from './pages/edit-category/edit-category.component';
 
 export const appRoutes: Route[] = [
-    {path: 'admin', component: DashboardComponent},
+    {path: 'admin', component: DashboardComponent, canActivate: [AuthGuard]},
     {
         path: 'admin/category',
-        component: ListCategoryComponent
+        component: ListCategoryComponent, canActivate: [AuthGuard]
     },
     {
         path: 'admin/category/add',
-        component: AddCategoryComponent
+        component: AddCategoryComponent, canActivate: [AuthGuard]
     },
     {
         path: 'admin/category/edit/:id',
-        component: EditCategoryComponent
+        component: EditCategoryComponent, canActivate: [AuthGuard]
     }
 ];
